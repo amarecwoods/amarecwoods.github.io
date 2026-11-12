@@ -1,0 +1,654 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urbanization and Congressional Electoral Competitiveness | In Context</title>
+  <link rel="stylesheet" href="../styles.css">
+
+  <style>
+    .project-page {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 50px 24px 90px;
+    }
+
+    .project-back {
+      display: inline-block;
+      margin-bottom: 35px;
+      color: inherit;
+      text-decoration: none;
+      opacity: .7;
+    }
+
+    .project-label {
+      font-size: .75rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .project-page h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.12;
+      margin-bottom: 20px;
+    }
+
+    .project-deck {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      max-width: 760px;
+      margin-bottom: 35px;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      padding: 20px 0;
+      margin: 25px 0 45px;
+      border-top: 1px solid #d8d1c5;
+      border-bottom: 1px solid #d8d1c5;
+      font-size: .9rem;
+    }
+
+    .project-section {
+      margin: 55px 0;
+    }
+
+    .project-section h2 {
+      font-size: 1.65rem;
+      margin-bottom: 18px;
+    }
+
+    .project-section h3 {
+      font-size: 1.2rem;
+      margin: 32px 0 12px;
+    }
+
+    .project-section p,
+    .project-section li {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .project-section p {
+      margin-bottom: 17px;
+    }
+
+    .project-section ul {
+      padding-left: 24px;
+    }
+
+    .project-section li {
+      margin-bottom: 8px;
+    }
+
+    .project-callout {
+      border-left: 3px solid #a34d40;
+      padding: 18px 22px;
+      margin: 28px 0;
+      background: rgba(163, 77, 64, .06);
+    }
+
+    .project-callout p {
+      margin: 0;
+    }
+
+    .dashboard {
+      margin: 28px 0 42px;
+    }
+
+    .dashboard-frame {
+      width: 100%;
+      min-height: 420px;
+      border: 1px solid #d8d1c5;
+      background: #f3f0e9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 25px;
+      box-sizing: border-box;
+    }
+
+    .dashboard-frame iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+
+    .dashboard-placeholder {
+      max-width: 450px;
+      color: #665f57;
+    }
+
+    .dashboard-placeholder p {
+      font-size: .9rem;
+    }
+
+    .technical-link {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 12px 18px;
+      border: 1px solid currentColor;
+      text-decoration: none;
+    }
+
+    .technical-link:hover {
+      opacity: .7;
+    }
+
+    .project-note {
+      font-size: .88rem !important;
+      opacity: .75;
+    }
+
+    .project-footer {
+      border-top: 1px solid #d8d1c5;
+      padding-top: 28px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 600px) {
+      .project-page {
+        padding: 30px 18px 60px;
+      }
+
+      .dashboard-frame iframe {
+        height: 450px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="project-page">
+
+    <a class="project-back" href="../projects.html">← Back to Research</a>
+
+    <p class="project-label">Election Research · SQL · Tableau</p>
+
+    <h1>Urbanization and Congressional Electoral Competitiveness</h1>
+
+    <p class="project-deck">
+      Are congressional districts with larger urban populations more
+      or less electorally competitive? This project examines the
+      relationship between urbanization, partisan winning margins,
+      demographic composition, and congressional district boundaries.
+    </p>
+
+    <div class="project-meta">
+      <span><strong>Period:</strong> 1992–2024</span>
+      <span><strong>Tools:</strong> SQL Server and Tableau</span>
+      <span><strong>Focus:</strong> U.S. House elections</span>
+    </div>
+
+    <section class="project-section">
+      <h2>Project Overview</h2>
+
+      <p>
+        Urban areas are generally associated with stronger Democratic
+        electoral performance, particularly in major metropolitan
+        areas such as New York City, Atlanta, and Chicago. Historically,
+        the Democratic coalition had a broader rural presence, but as
+        the economy and population have become increasingly urbanized,
+        the geographic composition of the Democratic base has also
+        shifted.
+      </p>
+
+      <p>
+        This changing political geography raises an important question:
+        does the concentration of voters in urban areas translate into
+        less competitive congressional districts?
+      </p>
+
+      <div class="project-callout">
+        <p>
+          <strong>Central finding:</strong> Urbanization alone does not
+          explain electoral competitiveness. Highly urban districts
+          can produce substantial winning margins for either party,
+          while some moderately urban districts are considerably more
+          competitive.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Data and Methodology</h2>
+
+      <p>
+        I used congressional election results from 1992 through 2024
+        to examine Democratic and Republican electoral performance
+        across congressional districts. The analysis calculates
+        total votes, party vote totals, winning parties, winning
+        margins, and margin percentages.
+      </p>
+
+      <p>
+        I then connected the election results to Census congressional
+        district data to examine the relationship between district
+        population characteristics and electoral outcomes. Districts
+        were compared across different levels of urbanization, allowing
+        me to investigate patterns beyond a simple urban-versus-rural
+        distinction.
+      </p>
+
+      <h3>Research process</h3>
+
+      <ul>
+        <li>Inspected and cleaned congressional election records.</li>
+        <li>
+          Calculated Democratic and Republican vote totals and
+          electoral winning margins.
+        </li>
+        <li>
+          Joined election results to congressional district Census
+          demographic information.
+        </li>
+        <li>
+          Examined urban, rural, and total population characteristics.
+        </li>
+        <li>
+          Compared electoral competitiveness across states,
+          urbanization categories, and election cycles.
+        </li>
+      </ul>
+
+      <p class="project-note">
+        The analysis uses 2020 congressional district Census
+        characteristics for comparisons across historical election
+        cycles. See the limitations section below.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2>1. Are More Urban Districts Less Competitive?</h2>
+
+      <p>
+        Given the conventional understanding of urban partisan
+        geography, I initially expected highly urban districts to
+        be relatively safe Democratic seats. However, the data revealed
+        a more complicated picture, including exceptions such as
+        TX-2, CA-50, AZ-1, MI-3, and OK-1.
+      </p>
+
+      <p>
+        Urban populations are not politically homogeneous. Republicans
+        live and vote in major cities, just as Democrats live and vote
+        in rural communities. Urbanization describes the geographic
+        characteristics of a population, not the political preferences
+        of every individual within it. The way these populations are
+        grouped into congressional districts can therefore have
+        significant implications for electoral outcomes.
+      </p>
+
+      <p>
+        One of the most striking findings was the size of winning
+        margins in districts with urban populations exceeding 90%.
+        In 2016, the average Republican winning margin in this category
+        was 29%, compared with 26% in 2024. Democratic winners had
+        average margins of 41% in 2016 and 39% in 2024.
+      </p>
+
+      <p>
+        These figures suggest that highly urban districts can produce
+        substantial winning margins for either party, although
+        Democratic victories were particularly pronounced in this
+        category.
+      </p>
+
+      <p>
+        This prompted me to examine district boundaries and consider
+        the relationship between geographic concentration, redistricting,
+        and electoral competition. In several districts I investigated,
+        I noticed patterns that raised questions about partisan
+        gerrymandering. Urban centers and communities that generally
+        lean Democratic sometimes appeared concentrated within
+        particular congressional districts, while Republican-leaning
+        populations were also grouped in ways that could produce
+        safe seats.
+      </p>
+
+      <p>
+        These arrangements can create districts with overwhelming
+        winning margins for one party while reducing the competitiveness
+        of surrounding districts. A district's electoral margin does
+        not necessarily reflect the full political diversity of its
+        surrounding region.
+      </p>
+
+      <p>
+        Electoral competitiveness alone cannot establish the effects
+        of gerrymandering. Safe seats can reflect genuine political
+        preferences as well as the geographic distribution of voters,
+        but they can also be shaped by district design. When general
+        elections become increasingly predictable, voters may have
+        fewer opportunities to hold their representatives electorally
+        accountable.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2>2. Competitiveness Across Levels of Urbanization</h2>
+
+      <p>
+        The relationship between urbanization and electoral
+        competitiveness becomes more complicated when examining
+        individual districts across the four urbanization categories.
+      </p>
+
+      <p>
+        The 50–74.99% urban category contained several particularly
+        interesting examples. Oklahoma's third congressional district
+        was a major outlier, with a 56-point Republican margin in 2016.
+        Michigan's eighth district also demonstrated substantial
+        electoral movement, shifting from a Republican victory by
+        approximately 16.85 points in 2016 to a Democratic victory
+        by approximately 6.6 points in 2024. Iowa's first district
+        was another example, with a Republican victory by less than
+        one point in 2024.
+      </p>
+
+      <p>
+        Georgia's twelfth congressional district also caught my
+        attention. Despite having an urban population share of
+        approximately 56%, the district maintained relatively
+        substantial Republican margins in the elections examined.
+        Its racial composition, college-educated population, and
+        changing political environment raise questions about the
+        relationship between demographic characteristics and
+        electoral behavior.
+      </p>
+
+      <p>
+        More recent political developments in Georgia also make
+        this district worth investigating further, particularly
+        whether population growth, demographic change, and shifts
+        in voter preferences are altering its electoral trajectory.
+      </p>
+
+      <p>
+        The less-than-50% urban category displayed a different pattern.
+        Most of the districts examined produced Republican winning
+        margins exceeding 35 points in the 2016 and 2024 observations,
+        with North Carolina's first district standing out as a
+        Democratic exception.
+      </p>
+
+      <p>
+        Across the categories, racial and demographic composition
+        also appeared relevant. Districts with substantial Democratic
+        margins were often heavily urban and had large Black or
+        minority populations. For example, Texas's eighteenth
+        congressional district has a substantial minority population
+        and consistently produced large Democratic winning margins
+        in the elections examined. Conversely, several predominantly
+        white districts exhibited stronger Republican performance.
+      </p>
+
+      <p>
+        These observations suggest that urbanization alone cannot
+        explain electoral outcomes. Race, educational attainment,
+        geography, and other demographic characteristics may also
+        help explain differences in electoral competitiveness.
+        Demographics are potential indicators, not political destiny.
+        Further research would be needed to understand how these
+        characteristics interact.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2>3. Electoral Competitiveness Across Election Cycles</h2>
+
+      <p>
+        The time-series analysis revealed different patterns across
+        urbanization categories. In the 90%+ urban category, average
+        winning margins for both parties remained relatively stable
+        between 2016 and 2024, with the two parties' lines appearing
+        largely parallel.
+      </p>
+
+      <p>
+        The less-than-50% urban category showed a different trajectory,
+        with Republican advantages becoming more pronounced in many
+        of the districts examined. The middle urbanization categories
+        displayed more variation, with the 50–74.99% category appearing
+        particularly competitive across several election cycles.
+      </p>
+
+      <p>
+        The 1992, 2000, 2016, and 2024 observations were among the more
+        competitive cycles in the 50–74.99% category. Average winning
+        margins by party were:
+      </p>
+
+      <ul>
+        <li><strong>2024:</strong> Democrats 30.34%; Republicans 23.26%.</li>
+        <li><strong>2000:</strong> Democrats 28.81%; Republicans 25.26%.</li>
+        <li><strong>2016:</strong> Democrats 33.80%; Republicans 26.56%.</li>
+        <li><strong>1992:</strong> Democrats 25.59%; Republicans 23.66%.</li>
+      </ul>
+
+      <p>
+        Overall, the findings suggest that electoral competitiveness
+        has evolved differently across levels of urbanization rather
+        than following one consistent national pattern. They also
+        raise a broader question about how much electoral behavior
+        can be anticipated from the characteristics of a congressional
+        district.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2>4. Redistricting, Voter Participation, and the Limits of Partisan Maps</h2>
+
+      <p>
+        North Carolina provides a particularly interesting example
+        of the limits of partisan redistricting. Ahead of the 2026
+        midterm elections, Republican lawmakers redrew the state's
+        congressional map in an effort to gain another Republican
+        seat and make several districts more favorable to their party.
+        However, the results were substantially different from what
+        the map's designers had intended. Democrats flipped multiple
+        Republican-held congressional districts, including seats
+        that had been drawn to favor Republican candidates.
+      </p>
+
+      <p>
+        This occurred alongside unusually high voter participation.
+        North Carolina recorded a 53.6% turnout rate, its highest in
+        a non-presidential election since 1990, while early voting
+        increased by 36% compared with 2022. However, turnout alone
+        does not explain these results. The broader political
+        environment, candidate quality, campaign organization, and
+        changing voter preferences also contributed.
+      </p>
+
+      <p>
+        Rather than demonstrating that redistricting no longer matters,
+        North Carolina illustrates that the electoral advantages
+        created through district boundaries are not guaranteed.
+        Mapmakers can shape the conditions of competition, but they
+        cannot fully control how voters respond.
+      </p>
+
+      <p>
+        The results also raise questions about the relationship
+        between electoral competition and campaign investment.
+        When parties consider certain districts unwinnable, they
+        may devote fewer resources to organizing, advertising, and
+        campaigning there. This can create a cycle in which districts
+        receive less attention precisely because their electoral
+        outcomes are considered predictable.
+      </p>
+
+      <p>
+        Urban centers are particularly interesting in this regard.
+        Republican campaigns may concentrate their efforts on
+        suburban communities and metropolitan outskirts rather than
+        compete as seriously for voters in city centers, while
+        Democratic campaigns may make similar strategic calculations
+        in heavily Republican areas.
+      </p>
+
+      <p>
+        I would be interested to see what congressional campaigns
+        would look like if both parties had a genuine opportunity
+        to compete across a wider range of urban, suburban, and
+        rural districts. More competitive districts could encourage
+        parties to invest in communities they might otherwise
+        overlook, develop broader electoral coalitions, and give
+        voters more opportunities to evaluate competing candidates
+        and ideas.
+      </p>
+
+      <p>
+        This reinforces my interest in limiting partisan gerrymandering
+        through independent or nonpartisan redistricting processes.
+        Such reforms would not make every district competitive,
+        nor would they eliminate the political differences between
+        communities. However, they could reduce the ability of
+        political mapmakers to predetermine electoral advantages
+        through district boundaries.
+      </p>
+
+      <p class="project-note">
+        This section is a contemporary application of the project's
+        findings, rather than part of the 1992–2024 election dataset.
+        Sources for the 2026 map, election results, and turnout figures
+        should be added here.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2>5. Limitations and Further Research</h2>
+
+      <p>
+        An important limitation is that the urbanization classifications
+        use contemporary Census district characteristics rather than
+        historical population data for each election cycle. Population
+        composition and congressional boundaries have changed over
+        time, meaning the current urbanization classifications may
+        not accurately reflect the historical characteristics of
+        every district.
+      </p>
+
+      <p>
+        The analysis also identifies relationships between district
+        characteristics and electoral outcomes, rather than establishing
+        that any single demographic characteristic causes a particular
+        voting pattern. Urbanization, race, education, geography,
+        district boundaries, and changing political coalitions may
+        interact in ways that require further investigation.
+      </p>
+
+      <p>
+        Future research could examine how redistricting changes
+        electoral competitiveness, whether campaign investment
+        varies across districts with different levels of competitiveness,
+        and how demographic shifts affect partisan coalitions over time.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2>Conclusion</h2>
+
+      <p>
+        The findings suggest that urbanization is associated with
+        electoral competitiveness, but it is not sufficient to
+        explain partisan outcomes. Highly urban districts frequently
+        produce substantial winning margins, while some moderately
+        urban districts exhibit greater electoral competition.
+        Less urban districts in the sample have generally demonstrated
+        stronger Republican advantages in more recent observations.
+      </p>
+
+      <p>
+        These patterns raise broader questions about the relationship
+        between partisan geography, demographic change, redistricting,
+        and congressional representation. Electoral competition
+        is an important component of representative democracy.
+        I am particularly interested in how district boundaries can
+        shape the opportunities voters have to influence representation,
+        and whether reducing partisan manipulation in redistricting
+        could create more meaningful electoral competition.
+      </p>
+
+      <p>
+        Ultimately, this analysis demonstrates that the relationship
+        between geography and electoral behavior is more complicated
+        than a simple urban-versus-rural divide. It also points toward
+        further questions about how district boundaries, demographic
+        change, and shifting political coalitions shape the opportunities
+        parties have to compete.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2>Interactive Visualizations</h2>
+
+      <p>
+        Explore the dashboards used to examine electoral
+        competitiveness across states, urbanization categories,
+        and election cycles.
+      </p>
+
+      <div class="dashboard">
+        <h3>Dashboard 1: Electoral Competitiveness Across States</h3>
+        <div class="dashboard-frame">
+          <div class="dashboard-placeholder">
+            <strong>Tableau dashboard embed goes here</strong>
+            <p>Replace this placeholder with the Tableau Public iframe code.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard">
+        <h3>Dashboard 2: Electoral Competitiveness by Urbanization</h3>
+        <div class="dashboard-frame">
+          <div class="dashboard-placeholder">
+            <strong>Tableau dashboard embed goes here</strong>
+            <p>Replace this placeholder with the Tableau Public iframe code.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard">
+        <h3>Dashboard 3: Redistricting and Electoral Competitiveness</h3>
+        <div class="dashboard-frame">
+          <div class="dashboard-placeholder">
+            <strong>Tableau dashboard embed goes here</strong>
+            <p>Replace this placeholder with the Tableau Public iframe code.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Technical Materials</h2>
+
+      <p>
+        The SQL script documents the data preparation process,
+        calculation of congressional election margins, and integration
+        of election results with Census district information.
+      </p>
+
+      <a class="technical-link"
+         href="PASTE-YOUR-SQL-GITHUB-FILE-URL-HERE"
+         target="_blank"
+         rel="noopener noreferrer">
+        View SQL Source Code ↗
+      </a>
+    </section>
+
+    <div class="project-footer">
+      <a class="project-back" href="../projects.html">← Back to Research</a>
+    </div>
+
+  </main>
+
+</body>
+</html>
