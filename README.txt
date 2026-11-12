@@ -1,27 +1,18 @@
-IN CONTEXT — GITHUB PAGES STARTER SITE
+IN CONTEXT — WEBSITE UPDATE
 
-1. Create a public GitHub repository named:
-   amarecwoods.github.io
+Upload the contents of this folder to the root of your GitHub Pages repository:
+https://github.com/amarecwoods/amarecwoods.github.io
 
-2. Upload the contents of this folder to the ROOT of that repository.
-   The index.html file must be at the root, not inside another folder.
+This update:
+- Adds a Writing page with your Substack, NYC Daily Post author page and selected articles, and TikTok profile.
+- Adds a link to your GitHub profile as a home for older data projects.
+- Updates navigation across the site.
+- Includes the two research detail pages linked from the existing homepage. The public repository's visible file list did not include those two pages, so this package restores them.
 
-3. In GitHub, open Settings > Pages.
-   Under Build and deployment, choose "Deploy from a branch".
-   Select branch "main" and folder "/ (root)", then Save.
-
-4. Wait a few minutes, then visit:
-   https://amarecwoods.github.io/
-
-EDITING
-- Change page text directly in the .html files.
-- Change colors, fonts, spacing, and layout in styles.css.
-- Replace the dashed dashboard placeholders in the project pages with Tableau Public embed code after publishing each dashboard.
-- Update the About page before making the site public if you want a more complete biography.
-- Add your email and professional links only when you are ready to publish them.
-
-TABLEAU EMBEDS
-In Tableau Public, open the published visualization and use Share > Copy Embed Code.
-Paste the generated embed code where the dashboard placeholder appears. Keep the Tableau-provided script and iframe code intact.
-
-This is a static website. GitHub Pages hosts it for free from a public repository.
+Important:
+- Keep the folder structure. The two project detail pages belong inside the `projects` folder.
+- Replace the existing index.html, projects.html, about.html, and styles.css with the versions here.
+- Add writing.html and the projects/ folder.
+- You can upload the full contents at once using GitHub's Add file > Upload files, then commit the changes.
+- The Tableau boxes are placeholders. Replace them with your Tableau Public embed code when ready.
+- Older GitHub repositories are not linked individually yet. Add the repository URLs you want featured and the Writing page can be updated with a dedicated section.
